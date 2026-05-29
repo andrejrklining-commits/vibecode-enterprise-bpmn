@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: vibecode-enterprise
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_KEY=vibe_api_R3ttuZ6opzXIt1If4Yc9XQI0q2639Ze1_6cde76
+      - VITE_API_URL=https://app-5c146d159f7e.vibecode.bitrix24.tech
+    restart: unless-stopped
+    networks:
+      - vibecode
+
+networks:
+  vibecode:
+    driver: bridge
